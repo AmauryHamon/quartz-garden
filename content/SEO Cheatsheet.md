@@ -111,5 +111,4 @@ CTA
 
 ```
 
-## Resources
 

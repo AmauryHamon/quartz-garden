@@ -1,6 +1,8 @@
 ---
-title: Welcome
+title: Hello, this appears to be a digital garden
+draft: false
+content-meta: false
 ---
 
-This is the homepage of my garden
-This contains [[HTML Cheatsheet]]
+[[HTML Cheatsheet]]
+[[SEO Cheatsheet]]
