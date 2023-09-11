@@ -11,6 +11,7 @@ import Spacer from "./Spacer"
 import TableOfContents from "./TableOfContents"
 import TagList from "./TagList"
 import Graph from "./Graph"
+import GraphButton from "./GraphButton"
 import Backlinks from "./Backlinks"
 import Search from "./Search"
 import Footer from "./Footer"
@@ -31,6 +32,7 @@ export {
   TableOfContents,
   TagList,
   Graph,
+  GraphButton,
   Backlinks,
   Search,
   Footer,
