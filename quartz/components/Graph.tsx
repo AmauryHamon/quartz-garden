@@ -25,22 +25,22 @@ const defaultOptions: GraphOptions = {
     drag: true,
     zoom: true,
     depth: 1,
-    scale: 1.1,
-    repelForce: 0.5,
-    centerForce: 0.3,
-    linkDistance: 30,
-    fontSize: 0.6,
+    scale: 2.5,
+    repelForce: .75,
+    centerForce: .3,
+    linkDistance: 10,
+    fontSize: 0.3,
     opacityScale: 1,
   },
   globalGraph: {
     drag: true,
     zoom: true,
     depth: -1,
-    scale: 1.9,
+    scale: 4,
     repelForce: 0.5,
     centerForce: 0.3,
-    linkDistance: 30,
-    fontSize: 0.6,
+    linkDistance: 10,
+    fontSize: 0.3,
     opacityScale: 1,
   },
 }
@@ -81,7 +81,10 @@ export default ((opts?: GraphOptions) => {
           </svg>
         </div>
         <div id="global-graph-outer">
-          <div id="global-graph-container" data-cfg={JSON.stringify(globalGraph)}></div>
+        {/* <button id="close-global-graph">Close</button> */}
+          <div id="global-graph-container" data-cfg={JSON.stringify(globalGraph)}>
+            
+          </div>
         </div>
       </div>
     )
