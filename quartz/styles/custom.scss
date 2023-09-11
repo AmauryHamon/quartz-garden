@@ -1,1 +1,96 @@
 // put your custom CSS here!
+.page .page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    margin: 0 !important;
+    z-index: 50;
+}
+header{
+    padding: 0 3rem;
+    margin: 3rem 0 !important;
+}
+.darkmode{
+    margin-right: 0!important;
+}
+.center {
+    padding-top: 6rem;
+    
+}
+.search{
+    max-width: 8rem;
+}
+.center {
+    padding: 2rem;
+    background-color: var(--shiki-color-background);
+    opacity: .8;
+    // z-index: 10;
+}
+
+#quartz-body .sidebar.left {
+    left: 0!important;
+    padding: 3rem !important;
+}
+.page>#quartz-body .sidebar.right {
+    right: 0 !important;
+    padding: 3rem !important;
+}
+footer {
+    position: absolute;
+    bottom: 0!important;
+    left: 0vw;
+    padding: 2rem;
+    width: 100vw !important;
+    margin-bottom: 0rem!important;
+    height: 6rem;
+}
+.article-title {
+    margin-top:1rem !important ;
+}
+#quartz-body {
+    position: relative;
+    padding-bottom: 8rem;
+    min-height: 89vh !important;
+    background-color: var(--shiki-color-background);
+}
+
+/*GRAPH*/
+// .graph {
+
+// }
+// .graph > #global-graph-outer {
+//     z-index: 10 !important;
+//     left: 0;
+//     top: 0;
+//     width: 50vw;
+//     height: 50%;
+//     backdrop-filter: blur(0px) !important;
+//     display: inline-block !important;
+//     overflow: hidden;
+// }
+// .graph>#global-graph-outer.active {
+//     display: inline-block;
+//     z-index: 9999 !important;
+// }
+// .graph>#global-graph-outer>#global-graph-container {
+//     border: 0px !important ;
+//     background-color: var(--light);
+//     border-radius: 0px;
+//     box-sizing: border-box;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     height: 100vh !important;
+//     width: 100vw !important;
+//     z-index: -1 !;
+
+// }
+    
+@media (max-width: 1510px){
+    .page {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 1rem !important;        
+    }
+}
