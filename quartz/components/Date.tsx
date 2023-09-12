@@ -17,11 +17,15 @@ export function getDate(cfg: GlobalConfiguration, data: QuartzPluginData): Date 
 }
 
 export function formatDate(d: Date): string {
-  return d.toLocaleDateString("en-US", {
+  const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+  const formattedDate = d.toLocaleDateString("en-GB", {
     year: "numeric",
-    month: "short",
+    month: "2-digit",
     day: "2-digit",
   })
+  // Replace slashes with dots
+  return formattedDate.replace(/\//g, '.');
+
 }
 
 export function Date({ date }: Props) {
