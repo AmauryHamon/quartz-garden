@@ -19,10 +19,10 @@ export default ((opts?: Options) => {
           Amaury Hamon, {year}
           {/* Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, © {year} */}
         </p>
-        <ul>
+        <ul >
           {Object.entries(links).map(([text, link]) => (
             <li>
-              <a href={link} target="_blank">{text}</a>
+              <a class="footer-link" href={link} target="_blank">{text}</a>
             </li>
           ))}
         </ul>
