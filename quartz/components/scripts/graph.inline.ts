@@ -1,6 +1,6 @@
 import type { ContentDetails } from "../../plugins/emitters/contentIndex"
 import * as d3 from "d3"
-import { registerEscapeHandler, removeAllChildren } from "./util"
+import { registerCloseHandler, registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
 
 type NodeData = {
@@ -186,12 +186,18 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       const linkNodes = d3
         .selectAll(".link")
         .filter((d: any) => d.source.id === currentId || d.target.id === currentId)
-
+        
       // highlight neighbour nodes
-      neighbourNodes.transition().duration(200).attr("fill", color)
+      
+      neighbourNodes
+        .transition().duration(200).attr("fill", color)
+        .attr("class", "node active")
 
       // highlight links
-      linkNodes.transition().duration(200).attr("stroke", "var(--gray)").attr("stroke-width", 1)
+      linkNodes
+        .attr("class", "link active")
+        .transition().duration(200).attr("stroke", "var(--gray)").attr("stroke-width", 1)
+        
 
       const bigFont = fontSize * 1.5
 
@@ -208,11 +214,16 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     })
     .on("mouseleave", function (_, d) {
       const currentId = d.id
+      const neighbourNodes$ = d3
+        .selectAll(".node.active").attr("class", "node");
       const linkNodes = d3
-        .selectAll(".link")
-        .filter((d: any) => d.source.id === currentId || d.target.id === currentId)
+        .selectAll(".link.active")
+        .filter((d: any) => d.source.id === currentId || d.target.id === currentId);
+        
 
-      linkNodes.transition().duration(200).attr("stroke", "var(--lightgray)")
+      linkNodes
+        .transition().duration(200).attr("stroke", "var(--lightgray)")
+        .attr("class", "link");
 
       const parent = this.parentNode as HTMLElement
       d3.select<HTMLElement, NodeData>(parent)
@@ -296,7 +307,7 @@ function renderGlobalGraph() {
     removeAllChildren(graph)
   }
 
-  registerEscapeHandler(container, hideGlobalGraph)
+  registerCloseHandler(container, hideGlobalGraph)
 }
 
 document.addEventListener("nav", async (e: unknown) => {
