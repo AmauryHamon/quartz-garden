@@ -8,7 +8,7 @@ export default (() => {
     return (
       <div class="search">
         <div id="search-icon">
-          <p>Search</p>
+          {/* <p>Search</p> */}
           <div></div>
           <svg
             tabIndex={0}
