@@ -9,7 +9,8 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    // baseUrl: "quartz.jzhao.xyz",
+    // baseUrl: "nodes.amauryhamon.com",
+    baseUrl: "quartz-garden.vercel.app",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
