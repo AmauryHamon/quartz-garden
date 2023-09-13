@@ -7,8 +7,12 @@ export const sharedPageComponents: SharedLayout = {
   header: [Component.PageTitle(),Component.MobileOnly(Component.Spacer()),Component.Search(),Component.Darkmode(),],
   footer: Component.Footer({
     links: {
-      Arena: "https://www.are.na/amaury-hamon",
-      GitHub: "https://github.com/AmauryHamon"
+      "www": "http://amauryhamon.com/",
+      "email": "mailto:contact@amauryhamon.com",
+      "are.na": "https://www.are.na/amaury-hamon",
+      github: "https://github.com/AmauryHamon",
+      instagram: "https://www.instagram.com/amauryhamon/",
+      impressum: "/Impressum"
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),
