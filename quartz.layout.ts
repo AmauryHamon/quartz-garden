@@ -12,7 +12,7 @@ export const sharedPageComponents: SharedLayout = {
       "are.na": "https://www.are.na/amaury-hamon",
       github: "https://github.com/AmauryHamon",
       instagram: "https://www.instagram.com/amauryhamon/",
-      impressum: "/Impressum"
+      impressum: "/impressum"
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
   }),
