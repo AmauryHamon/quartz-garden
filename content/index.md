@@ -4,6 +4,7 @@ draft: false
 content-meta: false
 ---
 
+[[Markdown Cheatsheet]]
 [[HTML Cheatsheet]]
 [[SEO Cheatsheet]]
 [[InDesign Datamerge]]
