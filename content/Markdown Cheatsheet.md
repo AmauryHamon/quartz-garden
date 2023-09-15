@@ -2,7 +2,11 @@
 title: Markdown Cheatsheet
 draft: false
 tags:
+  - code
+  - cheatsheet
 ---
+
+Other cheatsheets:  [[HTML Cheatsheet]][[CSS Cheatsheet]][[SEO Cheatsheet]]
 
 # Title 1
 ## Title 2
