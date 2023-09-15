@@ -114,21 +114,60 @@ footer ul li{
 }
 
 /*GRAPH*/
-header {
-    // padding-right: 7rem !important;
+// header {
+//     // padding-right: 7rem !important;
+// }
+// .graph-outer {
+//     // position: static !important;
+// }
+
+@-webkit-keyframes dash {
+from {
+        stroke-dashoffset: 500;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+    }
+
+line.link {
+    stroke: var(--lightgray);
+    fill: var(--lightgray);
 }
-.graph-outer {
-    // position: static !important;
+line.link.active {
+    // stroke: var(--dark);
+    stroke:orangered;
+    fill: transparent;   
+    stroke-dasharray: 3;
+    animation: dash 60s linear;
 }
+circle.node.active{
+    fill:var(--grey);
+    // fill: transparent;   
+    // stroke:orangered;
+    stroke-width: 1px;
+    stroke-dasharray: 1;
+    animation: dash 60s linear;
+}
+circle.node.active:hover{
+    // fill:var(--dark);
+    fill: orangered;
+    stroke-width: 1px;
+    stroke-dasharray: 1;
+    animation: dash 60s linear;
+}
+
+
 #global-graph-icon {
     opacity: 1!important;
     // z-index: 100;
     // position: fixed;
 }
+
 #global-graph-container{
     border: 0 !important;
-    background-color: var(--light);
-    opacity: .8;
+    
+    opacity: 1;
     box-sizing: border-box;
     border-radius: 0 !important;
     width: 100vw !important;
@@ -141,6 +180,7 @@ header {
 }
 #global-graph-container svg {
     opacity: 1;
+    height: 100% !important;
 }
 #global-graph-outer h3  {
     position: absolute;
@@ -148,30 +188,13 @@ header {
     margin: 3rem;
     width: auto;
 }
-.link .active {
-    // stroke: var(--foreground-text);
-    // fill: transparent;   
-      stroke-dasharray: 5;
-      animation: dash 40s linear;
-}
-  
-  @keyframes dash {
-    to {
-      stroke-dashoffset: 1000;
-    }
-  }
-  
-  .node circle {
-    // cursor: pointer;
-    // fill: var(--background);
-    transition: all 0.15s ease-out;
-  
-    &.active {
-    //   stroke: var(--foreground-text);
-      stroke-dasharray: 3;
-      animation: dash 80s linear;
-    }
-}
+
+// line .link .active {
+//     // stroke: var(--foreground-text);
+//     // fill: transparent;   
+//         stroke-dasharray: 5;
+//         animation: dash 4s linear;
+// }
 // .graph > #global-graph-outer {
 //     z-index: 10 !important;
 //     left: 0;

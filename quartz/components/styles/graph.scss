@@ -45,14 +45,14 @@
     backdrop-filter: blur(4px);
     display: none;
     overflow: hidden;
-
+    background-color: var(--overlay) !important;
     &.active {
       display: inline-block;
     }
 
     & > #global-graph-container {
       border: 1px solid var(--lightgray);
-      background-color: var(--light);
+
       border-radius: 5px;
       box-sizing: border-box;
       position: fixed;

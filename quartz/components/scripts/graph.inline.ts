@@ -118,6 +118,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
     .attr("class", "link")
     .attr("stroke", "var(--lightgray)")
     .attr("stroke-width", 1)
+    .attr("stroke-dashoffset", 2)
 
   // svg groups
   const graphNode = svg.append("g").selectAll("g").data(graphData.nodes).enter().append("g")
@@ -126,7 +127,8 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const color = (d: NodeData) => {
     const isCurrent = d.id === slug
     if (isCurrent) {
-      return "var(--gray)"
+      // return "var(--dark)"
+      return "orangered"
     } else if (visited.has(d.id)) {
       return "var(--darkgray)"
     } else {
@@ -177,6 +179,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       const targ = resolveRelative(fullSlug, d.id)
       window.spaNavigate(new URL(targ, window.location.toString()))
     })
+    
     .on("mouseover", function (_, d) {
       const neighbours: SimpleSlug[] = data[fullSlug].links ?? []
       const neighbourNodes = d3
@@ -187,19 +190,39 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
         .selectAll(".link")
         .filter((d: any) => d.source.id === currentId || d.target.id === currentId)
         
-      // highlight neighbour nodes
+      // highlight target node
+
+
       
+      // .attr("fill", "orangered")
+
       neighbourNodes
-        .transition().duration(200).attr("fill", color)
-        .attr("class", "node active")
+      .attr("class", "node active")
+        // .attr("fill", color)
+        // .attr("stroke", "orangered")
+        // .attr("stroke-width", 1)
+        // .attr("animation", "dash 40s linear infinite")
+        // .attr("stroke-dasharray", 0)
+        // .attr("transition", "all 0.15s ease-out")
+        // .transition().duration(200)
+
+      //set node without id with orangered color
+      
+
+        
 
       // highlight links
       linkNodes
         .attr("class", "link active")
-        .transition().duration(200).attr("stroke", "var(--gray)").attr("stroke-width", 1)
+        // .attr("stroke", "orangered").attr("stroke-width", 1)
+        // .attr("animation", "dash 40s linear infinite")
+        // .attr("stroke-dasharray", 3)
+    
+        // // .transition().duration(200)
+        // .attr("transition", "all 0.15s ease-out")
         
 
-      const bigFont = fontSize * 1.5
+      const bigFont = fontSize * 1.2
 
       // show text for self
       const parent = this.parentNode as HTMLElement
@@ -222,8 +245,19 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
         
 
       linkNodes
-        .transition().duration(200).attr("stroke", "var(--lightgray)")
-        .attr("class", "link");
+        // .transition().duration(200)
+        // .attr("stroke", "var(--lightgray)")
+        // .attr("stroke-dasharray", 0)
+        // .attr("stroke-dashoffset", 0)
+        .attr("class", "link")
+
+      neighbourNodes$
+      .attr("class", "node")
+      // .attr("fill", color)
+      // .attr("stroke", "transparent")
+      // .attr("stroke-width", 1)
+      // .attr("stroke-dasharray", 0)
+      // .attr("transition", "all 0.15s ease-out");
 
       const parent = this.parentNode as HTMLElement
       d3.select<HTMLElement, NodeData>(parent)
@@ -240,7 +274,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
   const labels = graphNode
     .append("text")
     .attr("dx", 0)
-    .attr("dy", (d) => -nodeRadius(d) + "px")
+    .attr("dy", (d) => -nodeRadius(d)-2 + "px")
     .attr("text-anchor", "middle")
     .text(
       (d) =>
@@ -248,6 +282,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
         (d.id.charAt(0).toUpperCase() + d.id.slice(1, d.id.length - 1)).replace("-", " "),
     )
     .style("opacity", (opacityScale - 1) / 3.75)
+    
     .style("pointer-events", "none")
     .style("font-size", fontSize + "em")
     .raise()
