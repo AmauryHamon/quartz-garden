@@ -141,8 +141,11 @@ line.link.active {
     stroke-dasharray: 3;
     animation: dash 60s linear;
 }
+// circle.node {
+//     fill: var(--lightgray);
+// }
 circle.node.active{
-    fill:var(--grey);
+    fill:var(--gray);
     // fill: transparent;   
     // stroke:orangered;
     stroke-width: 1px;

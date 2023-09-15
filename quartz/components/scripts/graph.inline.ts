@@ -130,7 +130,7 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       // return "var(--dark)"
       return "orangered"
     } else if (visited.has(d.id)) {
-      return "var(--darkgray)"
+      return "var(--gray)"
     } else {
       return "var(--gray)"
     }
