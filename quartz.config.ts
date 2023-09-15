@@ -7,9 +7,9 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: 'google', 
+      tagId: 'G-EW3RSWWHBY' ,
     },
-    // baseUrl: "nodes.amauryhamon.com",
     baseUrl: "nodes.amauryhamon.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
