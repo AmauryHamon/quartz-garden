@@ -29,6 +29,7 @@ const config: QuartzConfig = {
           secondary: "#6e6e6e",
           tertiary: "#black",
           highlight: "rgba(200 , 200, 200, 0.15)",
+          overlay:"rgba(248 , 248, 248, 0.8)",
         },
         darkMode: {
           light: "black",
@@ -39,6 +40,7 @@ const config: QuartzConfig = {
           secondary: "#6e6e6e",
           tertiary: "#f8f8f8",
           highlight: "rgba(200 , 200, 200, 0.15)",
+          overlay:"rgba(0, 0, 0, 0.8)",
         },
       },
     },
