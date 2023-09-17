@@ -29,7 +29,7 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.ArticleTitle()],
-  left: [],
-  right: [],
+  beforeBody: [Component.ArticleTitle(), Component.ContentMeta(), Component.TagList()],
+  left: [Component.DesktopOnly(Component.Explorer())],
+  right: [Component.Graph(), Component.Backlinks()],
 }
