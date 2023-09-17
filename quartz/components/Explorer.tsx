@@ -7,7 +7,7 @@ import { ExplorerNode, FileNode, Options } from "./ExplorerNode"
 
 // Options interface defined in `ExplorerNode` to avoid circular dependency
 const defaultOptions = (): Options => ({
-  title: "Explorer",
+  title: "Node Explorer",
   folderClickBehavior: "collapse",
   folderDefaultState: "collapsed",
   useSavedState: true,

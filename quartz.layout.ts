@@ -22,7 +22,7 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [Component.ArticleTitle(), Component.ContentMeta(), Component.TagList()],
   left: [ 
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.Explorer()), Component.DesktopOnly(Component.TableOfContents())
   ],
   right: [Component.Graph(), Component.Backlinks()],
 }
