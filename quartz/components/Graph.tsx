@@ -13,6 +13,8 @@ export interface D3Config {
   linkDistance: number
   fontSize: number
   opacityScale: number
+  removeTags: string[]
+  showTags: boolean
 }
 
 interface GraphOptions {
@@ -31,6 +33,8 @@ const defaultOptions: GraphOptions = {
     linkDistance: 10,
     fontSize: 0.3,
     opacityScale: 1,
+    showTags: true,
+    removeTags: [],
   },
   globalGraph: {
     drag: true,
@@ -42,6 +46,8 @@ const defaultOptions: GraphOptions = {
     linkDistance: 30,
     fontSize: 0.3,
     opacityScale: 1,
+    showTags: true,
+    removeTags: [],
   },
 }
 
@@ -81,10 +87,7 @@ export default ((opts?: GraphOptions) => {
           </svg>
         </div>
         <div id="global-graph-outer">
-        {/* <button id="close-global-graph">Close</button> */}
-          {/* <h3>Global Graph View</h3> */}
-          <div id="global-graph-container" data-cfg={JSON.stringify(globalGraph)}>
-          </div>
+          <div id="global-graph-container" data-cfg={JSON.stringify(globalGraph)}></div>
         </div>
       </div>
     )

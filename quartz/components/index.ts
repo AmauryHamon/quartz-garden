@@ -9,9 +9,10 @@ import PageTitle from "./PageTitle"
 import ContentMeta from "./ContentMeta"
 import Spacer from "./Spacer"
 import TableOfContents from "./TableOfContents"
+import GraphButton from "./GraphButton"
+import Explorer from "./Explorer"
 import TagList from "./TagList"
 import Graph from "./Graph"
-import GraphButton from "./GraphButton"
 import Backlinks from "./Backlinks"
 import Search from "./Search"
 import Footer from "./Footer"
@@ -30,9 +31,10 @@ export {
   ContentMeta,
   Spacer,
   TableOfContents,
+  GraphButton,
+  Explorer,
   TagList,
   Graph,
-  GraphButton,
   Backlinks,
   Search,
   Footer,
